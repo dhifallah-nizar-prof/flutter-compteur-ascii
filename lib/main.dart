@@ -47,7 +47,7 @@ class InteractiveWidget extends StatefulWidget {
 }
 
 class _InteractiveWidgetState extends State<InteractiveWidget> {
-  int compteur = 0;
+  int _compteur = 0;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,24 +56,24 @@ class _InteractiveWidgetState extends State<InteractiveWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           FloatingActionButton(onPressed: () {
-            if (compteur>0 ) {
+            if (_compteur>0 ) {
               setState(() {
-                compteur--;
+                _compteur--;
               });
             }
           }, child: Icon(Icons.remove, size: 40,color: Colors.blue,)),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: Text(" ${String.fromCharCode(compteur)} $compteur",
+            child: Text(" ${String.fromCharCode(_compteur)} $_compteur",
               style: TextStyle(fontSize: 50,
-                  color: (compteur>= 65 && compteur<= 90)? Colors.red : ((compteur >= 97 && compteur <= 122)? Colors.green: Colors.blue),
+                  color: (_compteur>= 65 && _compteur<= 90)? Colors.red : ((_compteur >= 97 && _compteur <= 122)? Colors.green: Colors.blue),
 
 
     ),),
           ),
           FloatingActionButton(onPressed: () {
             setState(() {
-              compteur++;
+              _compteur++;
             });
 
           }, child: Icon(Icons.add, size: 40,color: Colors.blue,)),
